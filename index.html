@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KingBro Empire - Premium Urban Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Account Modal -->
+    <div id="accountModal" class="modal">
+        <div class="modal-content">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Welcome to KingBro Empire</h2>
+                    <button id="closeAccountModalBtn" class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="flex border-b mb-6">
+                    <button id="signInTab" class="tab-button active flex-1 text-center">Sign In</button>
+                    <button id="signUpTab" class="tab-button flex-1 text-center">Sign Up</button>
+                </div>
+                
+                <!-- Sign In Form -->
+                <div id="signInForm" class="space-y-4">
+                    <div>
+                        <label for="signInEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="signInEmail" class="form-input" placeholder="your@email.com">
+                    </div>
+                    
+                    <div>
+                        <label for="signInPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input type="password" id="signInPassword" class="form-input" placeholder="••••••••">
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="rememberMe" class="h-4 w-4 text-[var(--accent)] focus:ring-[var(--accent)] border-gray-300 rounded">
+                            <label for="rememberMe" class="ml-2 block text-sm text-gray-700">Remember me</label>
+                        </div>
+                        
+                        <a href="#" class="text-sm text-[var(--accent)] hover:underline">Forgot password?</a>
+                    </div>
+                    
+                    <button id="signInBtn" class="w-full bg-[var(--primary)] text-white py-3 rounded-lg font-bold hover:bg-opacity-90 transition">
+                        Sign In
+                    </button>
+                    
+                    <div class="relative mt-6">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3 mt-6">
+                        <button class="social-btn">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0110 4.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.14 18.163 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                            </svg>
+                            GitHub
+                        </button>
+                        
+                        <button class="social-btn">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
+                            Twitter
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Sign Up Form -->
+                <div id="signUpForm" class="space-y-4 hidden">
+                    <div>
+                        <label for="signUpName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="signUpName" class="form-input" placeholder="John Doe">
+                    </div>
+                    
+                    <div>
+                        <label for="signUpEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="signUpEmail" class="form-input" placeholder="your@email.com">
+                    </div>
+                    
+                    <div>
+                        <label for="signUpPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input type="password" id="signUpPassword" class="form-input" placeholder="••••••••">
+                    </div>
+                    
+                    <div>
+                        <label for="signUpConfirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                        <input type="password" id="signUpConfirmPassword" class="form-input" placeholder="••••••••">
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input type="checkbox" id="acceptTerms" class="h-4 w-4 text-[var(--accent)] focus:ring-[var(--accent)] border-gray-300 rounded">
+                        <label for="acceptTerms" class="ml-2 block text-sm text-gray-700">
+                            I agree to the <a href="#" class="text-[var(--accent)] hover:underline">Terms</a> and <a href="#" class="text-[var(--accent)] hover:underline">Privacy Policy</a>
+                        </label>
+                    </div>
+                    
+                    <button id="signUpBtn" class="w-full bg-[var(--primary)] text-white py-3 rounded-lg font-bold hover:bg-opacity-90 transition">
+                        Create Account
+                    </button>
+                    
+                    <div class="relative mt-6">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Or sign up with</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3 mt-6">
+                        <button class="social-btn">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0110 4.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.933.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.14 18.163 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                            </svg>
+                            GitHub
+                        </button>
+                        
+                        <button class="social-btn">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
+                            Twitter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cart Modal -->
+    <div id="cartOverlay" class="cart-overlay"></div>
+    <div id="cartModal" class="cart-modal">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Your Cart</h2>
+                <button id="closeCartBtn" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="cartItemsContainer" class="divide-y divide-gray-200">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            
+            <div class="mt-6 border-t border-gray-200 pt-4">
+                <div class="flex justify-between text-lg font-bold mb-4">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">$0.00</span>
+                </div>
+                <button class="w-full bg-[var(--primary)] text-white py-3 rounded-lg font-bold hover:bg-opacity-90 transition">
+                    PROCEED TO CHECKOUT
+                </button>
+                <div class="mt-4 text-center">
+                    <a href="#" class="text-[var(--accent)] hover:underline">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cart Notification -->
+    <div id="cartNotification" class="cart-notification hidden">
+        <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Item added to cart!</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="bg-[var(--primary)] text-white sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-2xl font-bold bg-gradient-to-r from-[var(--secondary)] to-[var(--accent)] bg-clip-text text-transparent">KINGBRO EMPIRE</div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="/" class="hover:text-[var(--secondary)] transition">Home</a>
+                <a href="/collections" class="hover:text-[var(--secondary)] transition">Collections</a>
+                <a href="/about" class="hover:text-[var(--secondary)] transition">About</a>
+                <a href="/blog" class="hover:text-[var(--secondary)] transition">Blog</a>
+                <a href="/contact" class="hover:text-[var(--secondary)] transition">Contact</a>
+                
+                <!-- Search Bar - Desktop -->
+                <div class="relative ml-4 hidden lg:block">
+                    <div class="relative">
+                        <input type="text" placeholder="Search..." id="searchInput" 
+                               class="px-4 py-2 rounded-full text-black w-64 focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]"
+                               autocomplete="off">
+                        <button id="searchBtn" class="absolute right-3 top-2 text-[var(--primary)] hover:text-[var(--accent)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                        <div id="searchResults" class="search-results"></div>
+                    </div>
+                </div>
+                
+                <button id="accountBtn" class="hover:text-[var(--secondary)] transition flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    Account
+                </button>
+                
+                <button id="cartBtn" class="hover:text-[var(--secondary)] transition flex items-center relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    Cart
+                    <span id="cartCount" class="absolute -top-2 -right-4 bg-[var(--highlight)] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[var(--primary)] px-4 pb-4">
+            <div class="flex mb-4">
+                <input type="text" placeholder="Search..." id="mobileSearchInput" 
+                       class="px-4 py-2 rounded-l-full text-black w-full focus:outline-none"
+                       autocomplete="off">
+                <button id="mobileSearchBtn" class="bg-[var(--secondary)] text-black px-4 rounded-r-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </div>
+            <div id="mobileSearchResults" class="search-results mb-4"></div>
+            <div class="space-y-3">
+                <a href="/" class="block hover:text-[var(--secondary)] transition">Home</a>
+                <a href="/collections" class="block hover:text-[var(--secondary)] transition">Collections</a>
+                <a href="/about" class="block hover:text-[var(--secondary)] transition">About</a>
+                <a href="/blog" class="block hover:text-[var(--secondary)] transition">Blog</a>
+                <a href="/contact" class="block hover:text-[var(--secondary)] transition">Contact</a>
+                <button id="mobileAccountBtn" class="block hover:text-[var(--secondary)] transition w-full text-left">Account</button>
+                <button id="mobileCartBtn" class="block hover:text-[var(--secondary)] transition w-full text-left flex items-center">
+                    Cart <span id="mobileCartCount" class="ml-2 bg-[var(--highlight)] text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-black text-white overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-70"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--primary)] via-transparent to-transparent"></div>
+        
+        <div class="relative h-full flex items-center justify-center px-4">
+            <div class="text-center max-w-4xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[var(--secondary)] to-[var(--accent)] bg-clip-text text-transparent animate-pulse-slow">
+                    WEAR YOUR CROWN
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+                    Premium urban wear designed for those who rule their world
+                </p>
+                <button class="bg-[var(--secondary)] hover:bg-amber-600 text-black px-8 py-4 font-bold rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    SHOP NOW
+                </button>
+                
+                <div class="mt-12 flex justify-center space-x-4">
+                    <div class="w-3 h-3 rounded-full bg-[var(--secondary)] animate-bounce"></div>
+                    <div class="w-3 h-3 rounded-full bg-[var(--accent)] animate-bounce" style="animation-delay: 0.2s"></div>
+                    <div class="w-3 h-3 rounded-full bg-[var(--highlight)] animate-bounce" style="animation-delay: 0.4s"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">FEATURED COLLECTIONS</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Discover our latest curated collections blending streetwear aesthetics with premium craftsmanship
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Collection 1 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                         alt="Royal Streetwear" 
+                         class="w-full h-96 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 flex items-end p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Royal Streetwear</h3>
+                            <p class="text-white">Spring/Summer 2023</p>
+                            <button class="mt-4 bg-white text-black px-6 py-2 font-bold rounded-full text-sm hover:bg-[var(--light)] transition">
+                                VIEW COLLECTION
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Collection 2 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2042&q=80" 
+                         alt="Empire Essentials" 
+                         class="w-full h-96 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 flex items-end p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Empire Essentials</h3>
+                            <p class="text-white">Year-Round Staples</p>
+                            <button class="mt-4 bg-white text-black px-6 py-2 font-bold rounded-full text-sm hover:bg-[var(--light)] transition">
+                                VIEW COLLECTION
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Collection 3 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md hover:shadow-xl transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Limited Edition" 
+                         class="w-full h-96 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 flex items-end p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Limited Edition</h3>
+                            <p class="text-white">Exclusive Pieces</p>
+                            <button class="mt-4 bg-white text-black px-6 py-2 font-bold rounded-full text-sm hover:bg-[var(--light)] transition">
+                                VIEW COLLECTION
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="py-16 bg-gradient-to-br from-[var(--primary)] to-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">BEST SELLERS</h2>
+            <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                The most loved pieces from our community
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card bg-white text-black p-4 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="relative mb-4 overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" 
+                             alt="Signature Hoodie" 
+                             class="w-full h-64 object-cover product-image">
+                        <div class="absolute top-2 right-2 bg-[var(--highlight)] text-white px-2 py-1 text-xs font-bold rounded-full">
+                            SALE
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg">Signature Hoodie</h3>
+                    <p class="text-gray-600">Black / Gold Accents</p>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="font-bold text-[var(--primary)]">$89.99</span>
+                        <span class="text-sm line-through text-gray-400">$109.99</span>
+                    </div>
+                    <button class="add-to-cart mt-4 w-full bg-[var(--primary)] text-white py-2 rounded-full hover:bg-opacity-90 transition" data-product-id="1">
+                        ADD TO CART
+                    </button>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white text-black p-4 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="relative mb-4 overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
+                             alt="Crown Logo Tee" 
+                             class="w-full h-64 object-cover product-image">
+                    </div>
+                    <h3 class="font-bold text-lg">Crown Logo Tee</h3>
+                    <p class="text-gray-600">White / Black</p>
+                    <div class="font-bold mt-2 text-[var(--primary)]">$49.99</div>
+                    <button class="add-to-cart mt-4 w-full bg-[var(--primary)] text-white py-2 rounded-full hover:bg-opacity-90 transition" data-product-id="2">
+                        ADD TO CART
+                    </button>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white text-black p-4 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="relative mb-4 overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80" 
+                             alt="Jogger Pants" 
+                             class="w-full h-64 object-cover product-image">
+                        <div class="absolute top-2 right-2 bg-[var(--primary)] text-white px-2 py-1 text-xs font-bold rounded-full">
+                            NEW
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-lg">Jogger Pants</h3>
+                    <p class="text-gray-600">Charcoal Gray</p>
+                    <div class="font-bold mt-2 text-[var(--primary)]">$79.99</div>
+                    <button class="add-to-cart mt-4 w-full bg-[var(--primary)] text-white py-2 rounded-full hover:bg-opacity-90 transition" data-product-id="3">
+                        ADD TO CART
+                    </button>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white text-black p-4 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+                    <div class="relative mb-4 overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" 
+                             alt="Snapback Hat" 
+                             class="w-full h-64 object-cover product-image">
+                    </div>
+                    <h3 class="font-bold text-lg">Snapback Hat</h3>
+                    <p class="text-gray-600">Black / Gold Embroidery</p>
+                    <div class="font-bold mt-2 text-[var(--primary)]">$39.99</div>
+                    <button class="add-to-cart mt-4 w-full bg-[var(--primary)] text-white py-2 rounded-full hover:bg-opacity-90 transition" data-product-id="4">
+                        ADD TO CART
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-white text-white px-8 py-3 font-bold rounded-full hover:bg-white hover:text-[var(--primary)] transition">
+                    VIEW ALL PRODUCTS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 mb-8 lg:mb-0">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="KingBro Empire Story" 
+                         class="w-full h-auto rounded-xl shadow-lg">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">OUR STORY</h2>
+                    <p class="mb-4 text-gray-700">
+                        Founded in 2018 by brothers Malik and Jamal King, KingBro Empire began as a small streetwear line in Brooklyn and has grown into a globally recognized fashion brand.
+                    </p>
+                    <p class="mb-4 text-gray-700">
+                        Our mission is to blend urban aesthetics with premium quality, creating clothing that makes you feel regal while staying true to street culture roots.
+                    </p>
+                    <p class="mb-6 text-gray-700">
+                        Every piece is designed with intention, crafted with care, and made to help you command attention wherever you go.
+                    </p>
+                    <button class="bg-[var(--secondary)] hover:bg-amber-600 text-black px-8 py-3 font-bold rounded-full transition transform hover:scale-105">
+                        LEARN MORE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="py-16 bg-[var(--light)]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">#KINGBROEMPIRE</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Join the movement. Tag us for a chance to be featured.
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1">
+                <a href="#" class="group relative overflow-hidden h-48">
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+                         alt="Instagram post" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                </a>
+                
+                <a href="#" class="group relative overflow-hidden h-48">
+                    <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80" 
+                         alt="Instagram post" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                </a>
+                
+                <a href="#" class="group relative overflow-hidden h-48">
+                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Instagram post" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                </a>
+                
+                <a href="#" class="group relative overflow-hidden h-48">
+                    <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+                         alt="Instagram post" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                </a>
+                
+                <a href="#" class="group relative overflow-hidden h-48">
+                    <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80" 
+                         alt="Instagram post" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                </a>
+                
+                <a href="#" class="group relative overflow-hidden h-48">
+                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" 
+                         alt="Instagram post" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">JOIN THE KINGDOM</h2>
+            <p class="max-w-2xl mx-auto mb-8 text-gray-200">
+                Subscribe to our newsletter for exclusive content, early access to drops, and special offers.
+            </p>
+            <form id="newsletterForm" class="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+                <input type="email" placeholder="Your email address" 
+                       class="flex-grow px-4 py-3 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]">
+                <button type="submit" class="bg-[var(--secondary)] hover:bg-amber-600 text-black px-6 py-3 font-bold rounded-full transition transform hover:scale-105">
+                    SUBSCRIBE
+                </button>
+            </form>
+            <p id="newsletterMessage" class="mt-2 text-sm text-gray-300 hidden">
+                Thank you for subscribing! Check your email for confirmation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--primary)] text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4 bg-gradient-to-r from-[var(--secondary)] to-[var(--accent)] bg-clip-text text-transparent">KINGBRO EMPIRE</h3>
+                <p class="text-gray-400">Redefining urban fashion with premium quality and royal aesthetics since 2018.</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">Terms & Conditions</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">Careers</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">Store Locator</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Customer Service</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">Contact Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">Shipping Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">Returns & Exchanges</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">Size Guide</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-[var(--secondary)] transition">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Newsletter</h4>
+                <p class="text-gray-400 mb-4">Subscribe for exclusive drops and 10% off your first order.</p>
+                <form class="flex">
+                    <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-full text-black focus:outline-none">
+                    <button class="bg-[var(--secondary)] text-black px-4 py-2 rounded-r-full hover:bg-amber-600 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="container mx-auto mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+            <p>© 2023 KingBro Empire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
